@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker"
+rel="stylesheet">
+<title>18439713 Quiz</title>
+<link rel="stylesheet" type="text/css" href="jscript_tut.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<meta charset="utf-8">
+<meta name="viewpoint" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script language="JavaScript">
+
+numberQ = 10
+var A = new Array(numberQ);
+
+function first() {
+	for (var i=0; i <=numberQ; i++) {
+		for (var j=0; j <=3; j++) {
+			if (document.forms[i].elements[j].checked) {
+				A[i] = document.forms[i].elements[j].value;
+			}
+		}
+	}
+	var numcorrect = 0;
+	for (var i=0; i<=numberQ; i++) {
+		if (A[i] == "correct") {
+			numcorrect ++;
+		}
+	}
+}
+
+function FormValidation(){
+	//First Name Validation 
+	var q1=document.getElementById('Q1').value;
+	if(q1 == ""){
+		alert('Question Unanswered');
+		document.getElementById('q1').style.borderColor= "red";
+		return false;
+	}else{
+		document.getElementById('q1').style.borderColor= "green";
+	}
+}
+
+results=window.open("","","height=400,width=250,scrollbars=yes")
+results.document.open();
+results.document.write ("<html>" + 
+		"<head><title>Answers</title>"+
+		"<body bgcolor=black text=white>"+
+		"<background: url(Results.jpeg) center, no-repeat>" +
+		"<hr>"+"<BR>" + 
+		"Number 1 is: "+AA[1] +"<br>"+
+		"Number 2 is: "+AA[2] +"<br>"+
+		"Number 3 is: "+AA[3] +"<br>"+
+		"Number 4 is: "+AA[4] +"<br>"+ 
+		"<br><br>"+
+		AA[0] + ", you got "+z+" correct out of "+ numberQuestions +"<br><br>" +
+		"Your score is "+ Math.round((z/ numberQuestions) * 100)+" %"
++"<br><br></body></html>");
+results.document.close();
+}
+
+</script>
+
+<h1> OWL (Ordinary Wizarding Level Test) <br></h1>
+
+<form action="quiz.php" method="post">
+<!-- True / False Questions -->
+		<h2> True or False Questions </h2>
+
+				<p> Question 1: Rita Skeeter's dark secret is that she uses <br> Veritaserum
+				to get stories from people.</p>
+				<input type="radio" name="Q1" value="Incorrect, her dark secret is that
+				she is the Animagus."> True<br>
+				<input type="radio" name="Q1" value="Correct, her dark secret is that
+				she is the Animagus"> False<br>
+				<br>
+	
+				<p> Question 2: In the Deathly Hallows, Harry's substitute wand <br> is made
+				of Blackthorn.</p>
+				<input type="radio" name="Q2" value="Correct"> True<br>
+				<input type="radio" name="Q2" value="Incorrect"> False<br>
+				<br>
+
+
+<!-- Multiple Choice -->
+		<h2><span> Multiple Choice Questions </span></h2>
+
+				<p> Question 3: The Grey Lady is better known as...</p>
+				<input type="radio" name="Q3" value="Incorrect, Helena Ravenclaw">...Jezibel Gryffindor<br>
+				<input type="radio" name="Q3" value="Incorrect, Helena Ravenclaw">...Helen Hufflepuff<br>
+				<input type="radio" name="Q3" value="Correct">...Helena Ravenclaw<br>
+				<input type="radio" name="Q3" value="Incorrect, Helena Ravenclaw">...Joann Slytherin<br>
+				<br>
+
+				<p> Question 4: Harry got his green eyes from...</p>
+				<input type="radio" name="Q4" value="Incorrect, His mother">...his father<br>
+				<input type="radio" name="Q4" value="Correct">...his mother.<br>
+				<input type="radio" name="Q4" value="Incorrect, His Mother">...Voldemort's backfired
+				spell<br>
+				<input type="radio" name="Q4" value="Incorrect, His Mother">...he has light blue eyes<br>
+				<br>
+
+
+<!-- Multiple, Multiple Choice ( Multiple Correct Answers ) -->
+		<h2><span> Multiple Answer Multiple Choice </span></h2>
+				<p> Question 5: Which of these are Weasley Products? </p>
+				<input type="checkbox" name="Q5" value="Correct"> Nosebleed Nougat<br>
+				<input type="checkbox" name="Q5" value="Correct"> Ton-Tongue Toffee<br>
+				<input type="checkbox" name="Q5" value="Correct"> Purking Pastilles<br>
+				<input type="checkbox" name="Q5" value="Incorrect"> Cockroach Cluster<br>
+				<br>
+
+				<p> Question 6: Which of these are Unforgivable Curses? </p>
+				<input type="checkbox" name="Q6" value="Correct"> Crucio<br>
+				<input type="checkbox" name="Q6" value="Incorrect, did someone cast it
+				on you?"> Obliviate<br>
+				<input type="checkbox" name="Q6" value="Correct"> Avada Kedavra<br>
+				<input type="checkbox" name="Q6" value="Correct"> Imperio<br>
+				<br>
+
+
+<!-- Matching -->
+		
+		<h2><span> Matching Questions </span></h2>
+				<p> Question 7: Match the Dragons to te Triwizard Champions</p>
+				<p> Harry Potter    <input size="5" type="text" name="Q8" rows="1"
+				cols="5">    A. Welsh Green</p>
+				<p> Victor Krum     <input size="5" type="text" name="Q8" rows="1"
+				cols="5">    B. Swedish Short-Snout</p>
+				<p> Fleur Delacour  <input size="5" type="text" name="Q8" rows="1"
+				cols="5">    C. Chinese Fireball</p>
+				<p> Sedrick Diggory <input size="5" type="text" name="Q8" rows="1"
+				cols="5">    D. Norwegion Ridgeback</p>
+				<br>
+	
+
+<!-- Short Answer, Norberta is the answer -->
+		<h2><span> Short Answer Questions</span></h2>
+		
+				<p> Question 8: Hagrid's Norwegian Ridgeback final name was?<input size="20" type="text" name="Q9" rows="1"
+																													 cols="50"></p>	
+				<br>
+
+				<input type="submit" value="Submit" onclick="FormValidation()">
+		</form>
+</body>
+</html>
+
+
