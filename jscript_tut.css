@@ -30,8 +30,9 @@ h1 {
 	padding-top: 320px;
   text-align: center;}
 
-	h2 {  
-	margin-top: 0;
+h2 {  
+	font-family: 'Permanent Marker', cursive !important;
+  margin-top: 0;
   text-align: center;}
 
 h3 {
@@ -63,6 +64,14 @@ acronym {
   border-bottom: none; }
 
 /* specific divs */
+#right {
+  float:right;
+}
+
+#left {
+  float:left;
+}
+
 #container {
   background: url(zen-bg.jpg) no-repeat top left;
   padding: 0 175px 0 110px;
@@ -89,6 +98,7 @@ figure {
   max-width: 100%;
   height: auto;
   float: left; }
+
 
 #contents {
   margin: 20px; }
